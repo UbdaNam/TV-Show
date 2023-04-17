@@ -6,3 +6,58 @@
   box-sizing: border-box;
   font-family: 'PT Serif', serif;
 }
+
+body {
+  height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7vh;
+  box-shadow: 2px 0 2.5px;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  margin-left: 50vh;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+header nav ul li {
+  justify-content: space-between;
+  display: flex;
+  margin-left: 50px;
+  cursor: pointer;
+  padding: 4px 7px;
+  border-radius: 12px;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+header nav ul li:hover {
+  background-color: rgb(254, 49, 49);
+  transition: 0.3s ease-in-out;
+}
+
+.main {
+  height: 89vh;
+}
+
+footer {
+  height: 4vh;
+  background-color: rgba(0, 0, 0, 0.817);
+  margin: 0%;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.883);
+}
+
+footer div {
+  margin-left: 18px;
+}
