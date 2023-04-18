@@ -28,19 +28,31 @@ header nav ul {
 }
 
 header nav ul li {
-  justify-content: space-between;
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 50px;
   cursor: pointer;
-  padding: 4px 7px;
+  padding: 2px 5px;
   border-radius: 12px;
   border: none;
   transition: 0.3s ease-in-out;
 }
 
+.logo {
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 2px solid;
+  font-size: 10px;
+  display: flex;
+}
+
 header nav ul li:hover {
-  background-color: rgb(254, 49, 49);
   transition: 0.3s ease-in-out;
+  box-shadow: 2px 2px 3px;
 }
 
 .main {
