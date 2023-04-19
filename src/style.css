@@ -12,17 +12,22 @@ body {
 }
 
 header {
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 7vh;
   box-shadow: 2px 0 2.5px;
+  width: 100%;
+  background-color: white;
+  z-index: 2;
 }
 
 header nav ul {
   display: flex;
   list-style: none;
-  margin-left: 50vh;
+  margin-left: auto;
   font-size: 20px;
   font-weight: 600;
 }
@@ -56,20 +61,64 @@ header nav ul li:hover {
 }
 
 .main {
-  height: 89vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7vh;
+  padding-top: 10px;
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
   height: 4vh;
-  background-color: rgba(0, 0, 0, 0.817);
+  background-color: rgba(0, 0, 0, 1);
   margin: 0%;
   padding: 0;
   width: 100%;
   display: flex;
   align-items: center;
   color: rgba(255, 255, 255, 0.883);
+  z-index: 2;
 }
 
 footer div {
   margin-left: 18px;
+}
+
+.show-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 4vh;
+}
+
+.img > img {
+  height: auto;
+}
+
+.Movie {
+  height: 100%;
+  width: 100%;
+}
+
+.img {
+  height: 30vh;
+  width: 30vh;
+}
+
+.moveName {
+  font-size: 22px;
+}
+
+.likeComment-div {
+  display: flex;
+}
+
+.like-btn {
+  margin-left: 15px;
+  border: none;
 }
