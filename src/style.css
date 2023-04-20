@@ -110,15 +110,39 @@ footer div {
   width: 30vh;
 }
 
-.moveName {
+.UserName {
   font-size: 22px;
 }
 
 .likeComment-div {
   display: flex;
+  align-items: center;
 }
 
-.like-btn {
-  margin-left: 15px;
+.like-btn{
+  background-color: white;
+  margin-left: 20px;
   border: none;
+}
+
+.like-btn.liked i.fa-heart {
+  background-color: transparent;
+  color: rgb(255, 0, 43)
+
+}
+
+.likescounter{
+  margin-left: 8px;
+  font-weight: 700;
+  color: var(--pink);
+}
+
+.comment{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 11vh;
+  height: 4vh;
+  border: 2px solid;
+  cursor: pointer;
 }
