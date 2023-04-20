@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
 
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +25,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 7vh;
+  padding: 5px;
   box-shadow: 2px 0 2.5px;
   width: 100%;
   background-color: white;
@@ -45,14 +53,13 @@ header nav ul li {
 }
 
 .logo {
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  width: 50px;
+  padding: 10px 10px;
   border-radius: 50%;
   border: 2px solid;
   font-size: 10px;
-  display: flex;
 }
 
 header nav ul li:hover {
@@ -65,7 +72,7 @@ header nav ul li:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 7vh;
+  margin-top: 60px;
   padding-top: 10px;
 }
 
@@ -87,62 +94,54 @@ footer div {
   margin-left: 18px;
 }
 
-.show-card {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  padding-bottom: 10px;
-  margin-bottom: 4vh;
+#movie {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
 }
 
-.img > img {
-  height: auto;
-}
-
-.Movie {
-  height: 100%;
+.movie-card {
   width: 100%;
 }
 
 .img {
-  height: 30vh;
-  width: 30vh;
+  width: 100%;
+  height: 350px;
 }
 
-.UserName {
-  font-size: 22px;
-}
-
-.likeComment-div {
-  display: flex;
-  align-items: center;
-}
-
-.like-btn{
-  background-color: white;
-  margin-left: 20px;
-  border: none;
-}
-
-.like-btn.liked i.fa-heart {
-  background-color: transparent;
-  color: rgb(255, 0, 43)
-
-}
-
-.likescounter{
-  margin-left: 8px;
-  font-weight: 700;
-  color: var(--pink);
-}
-
-.comment{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 11vh;
-  height: 4vh;
-  border: 2px solid;
+button {
   cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.comment-btn {
+  background-color: #7f7e7b;
+  color: white;
+  border: none;
+  padding: 2%;
+  border-radius: 5px;
+}
+
+.like-btn {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  padding: 1%;
+  border-radius: 5px;
+}
+
+.like-btn .material-symbols-outlined {
+  color: #000;
+}
+
+.liked .material-symbols-outlined {
+  color: rgb(212, 25, 25);
+  font-variation-settings: 'FILL' 1;
 }

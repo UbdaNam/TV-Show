@@ -1,43 +1,64 @@
-const mealApi = 'https://api.tvmaze.com/shows';
-const involvementAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/'
-import {givelike , getLike} from './GetPostApi.js'
+import { givelike } from './GetPostApi.js';
 
-const fetchdata = () => {
-  fetch(mealApi)
-    .then((Response) => Response.json())
-    .then((data) => {
-        console.log(data);
-        const movieCards = data.map((user) => `
-            <div class="movie-card">
-              <img class="img" src="${user.image.original}">
-              <div class="UserName">${user.name}</div>
-              <div class="likeComment-div">
-                <div class="comment">Comment</div>
-                <button class='like-btn'><i class='fa-regular fa-heart'></i></button>
-                <p class="likescounter" id="${user.id}" >${0}</p>  
-              </div>
-            </div>
-          `);
-      document.getElementById('Movie').innerHTML = `
-          <div class="show-card">${movieCards.join('')}</div>
-        `  
-          
-        const likeButtons = document.querySelectorAll('.like-btn')
-        const likescounter = document.querySelectorAll('.likescounter')
-        
-        likeButtons.forEach( async (likeButton , index)=>{
-            likeButton.addEventListener('click' , (e)=>{
-                console.log(e);
-                // givelike(id)
-                 let likes = parseInt(likescounter[index].textContent);
-                 likes++
-                 likescounter[index].textContent = likes
-        
-                 if (parseInt(likescounter[index].textContent) !== 0) {
-                         likeButton.classList.add('liked');
-                    }
-                })
-            })
+const movieApi = 'https://api.tvmaze.com/shows';
+const involvementAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
+const appID = '3NoZNOXzRHTLQKFS7tlo';
+
+const fetchdata = async () => {
+  const likesResponse = await fetch(`${involvementAPI}apps/${appID}/likes/`);
+  const likesArray = await likesResponse.json();
+  const movieResponse = await fetch(movieApi);
+  const moviesArray = await movieResponse.json();
+  const movies = document.getElementById('movie');
+  movies.innerHTML = '';
+  moviesArray.forEach((movie) => {
+    let likeCounter = 0;
+    const like = likesArray.find((like) => Number(like.item_id) === movie.id);
+    if (like) {
+      likeCounter = like.likes;
+    }
+    const movieCard = document.createElement('div');
+    const movieImg = document.createElement('img');
+    const movieName = document.createElement('h3');
+    const buttonContainer = document.createElement('div');
+    const commentBtn = document.createElement('button');
+    const likeBtn = document.createElement('button');
+    const likeCount = document.createElement('p');
+
+    movieImg.src = movie.image.original;
+    movieImg.classList.add('img');
+    movieName.textContent = movie.name;
+    movieName.classList.add('UserName');
+    commentBtn.textContent = 'Comment';
+    commentBtn.classList.add('comment-btn');
+    likeBtn.innerHTML = '<span class="material-symbols-outlined">favorite</span>';
+    likeBtn.classList.add('like-btn');
+    likeCount.textContent = likeCounter;
+    likeCount.classList.add('likescounter');
+    buttonContainer.classList.add('button-container');
+    buttonContainer.appendChild(commentBtn);
+    buttonContainer.appendChild(likeBtn);
+    buttonContainer.appendChild(likeCount);
+    movieCard.classList.add('movie-card');
+    movieCard.appendChild(movieImg);
+    movieCard.appendChild(movieName);
+    movieCard.appendChild(buttonContainer);
+
+    movies.appendChild(movieCard);
+
+    likeBtn.addEventListener('click', async () => {
+      likeCounter += 1;
+      const response = await givelike(movie.id);
+      if (response.status === 201) {
+        const likesResponse = await fetch(`${involvementAPI}apps/${appID}/likes/`);
+        const likesArray = await likesResponse.json();
+        const like = likesArray.find((like) => Number(like.item_id) === movie.id);
+        if (like) {
+          likeCount.textContent = like.likes;
+          likeBtn.classList.add('liked');
+        }
+      }
     });
+  });
 };
 export default fetchdata;
