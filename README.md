@@ -1,4 +1,4 @@
-# Meals
+# TV Show
 <a name="readme-top"></a>
 
 <!-- TABLE OF CONTENTS -->
@@ -23,25 +23,25 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Leaderboard] <a name="about-project">
-Hi there! Welcome to our Meals project</a>
+# 📖 [TV Show] <a name="about-project">
+Hi there! Welcome to our TV show project</a>
 
-This is a Meals list web app that fetches real time data from the server to show your meals list with number of likes. This project also includes a details page for your meals and comments added to each meal.
+This is a TV show list web app that fetches real time data from the server to show you TV shows list with number of likes. This project also includes a details page for the TV shows and comments added to each TV show.
 
 ## 🛠 Built With 
 
 ### Tech Stack 
-HTML
-CSS
-JAVASCRIPT
+- HTML
+- CSS
+- JAVASCRIPT
 
 ### Key Features 
 
 - **[Layout]**
-- **[List of Meals]**
-- **[Like Meals]**
-- **[Meal detail Page]**
-- **[Comment on a Meal]**
+- **[List of TV shows]**
+- **[Like TV show]**
+- **[TV show detail Page]**
+- **[Comment on a TV show]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -59,14 +59,14 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need Web browser and code editor (Visual studio).
+In order to run this project you need Web browser and code editor (recommended: Visual studio).
 
 ### Setup
 
 Clone this repository to your desired folder:
 
 ``` snippet
-  git clone https://github.com/UbdaNam/Meals.git
+  git clone https://github.com/UbdaNam/TV-Show.git
 ```
 
 ### Install
@@ -88,9 +88,9 @@ On your computer's keyboard press f5 or run it with live server
 ## 👥 Author <a name="authors"></a>
 
 👤 **Ubda Nam**
-👤 **Hasnat Ali**
-
 - GitHub: [@UbdaNam](https://github.com/UbdaNam)
+
+👤 **Hasnat Ali**
 - GitHub: [@hasnatali1947](https://github.com/hasnatali1947)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -98,8 +98,8 @@ On your computer's keyboard press f5 or run it with live server
 <!-- FUTURE FEATURES -->
 ## Future Features
 
-- [ ] **[Add Meal recommandation]**
-- [ ] **[search meal feature]**
+- [ ] **[Add TV show recommandation]**
+- [ ] **[search TV show feature]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -108,7 +108,7 @@ On your computer's keyboard press f5 or run it with live server
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/UbdaNam/Leaderboard/issues).
+Feel free to check the [issues page](https://github.com/UbdaNam/TV-Show/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
