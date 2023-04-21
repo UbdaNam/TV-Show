@@ -1,4 +1,6 @@
 import { givelike } from './GetPostApi.js';
+import detailPopup from './details.js';
+import itemCounter from './itemCounter.js';
 
 const movieApi = 'https://api.tvmaze.com/shows';
 const involvementAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
@@ -9,7 +11,12 @@ const fetchdata = async () => {
   const likesArray = await likesResponse.json();
   const movieResponse = await fetch(movieApi);
   const moviesArray = await movieResponse.json();
+  const detilContainer = document.querySelector('.details');
+  const showCount = document.querySelector('.show');
   const movies = document.getElementById('movie');
+  const movieCount = itemCounter(moviesArray);
+
+  showCount.textContent = `Shows (${movieCount})`;
   movies.innerHTML = '';
   moviesArray.forEach((movie) => {
     let likeCounter = 0;
@@ -17,6 +24,7 @@ const fetchdata = async () => {
     if (like) {
       likeCounter = like.likes;
     }
+
     const movieCard = document.createElement('div');
     const movieImg = document.createElement('img');
     const movieName = document.createElement('h3');
@@ -47,17 +55,16 @@ const fetchdata = async () => {
     movies.appendChild(movieCard);
 
     likeBtn.addEventListener('click', async () => {
-      likeCounter += 1;
-      const response = await givelike(movie.id);
-      if (response.status === 201) {
-        const likesResponse = await fetch(`${involvementAPI}apps/${appID}/likes/`);
-        const likesArray = await likesResponse.json();
-        const like = likesArray.find((like) => Number(like.item_id) === movie.id);
-        if (like) {
-          likeCount.textContent = like.likes;
-          likeBtn.classList.add('liked');
-        }
-      }
+      await givelike(movie.id);
+      const likesResponse = await fetch(`${involvementAPI}apps/${appID}/likes/`);
+      const likesArray = await likesResponse.json();
+      const like = likesArray.find((like) => Number(like.item_id) === movie.id);
+      likeCount.textContent = like.likes;
+      likeBtn.classList.add('liked');
+    });
+    commentBtn.addEventListener('click', () => {
+      detailPopup(movie.id);
+      detilContainer.classList.add('visible');
     });
   });
 };
