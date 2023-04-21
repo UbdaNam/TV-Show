@@ -29,4 +29,10 @@ describe('Item counter tests', () => {
 
     expect(itemCounter(sampleData)).toBe(6);
   });
+
+  test('check empty array have length 0', () => {
+    const emptyArray = [];
+
+    expect(itemCounter(emptyArray)).toBe(0);
+  });
 });
