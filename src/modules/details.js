@@ -21,9 +21,9 @@ close
   <div class="img-container">
   <img src="${movieData.image.medium}" alt="${movieData.name} logo">
 </div>
-<div class="meal-detail">
+<div class="movie-detail">
   <h2>${movieData.name}</h2>
-  <ul class="ingredient-list">
+  <ul class="movie-info">
     <li>
     <ul class='genres'>
     ${movieData.genres.map((genre) => `<li>${genre}</li>`).join('\n')

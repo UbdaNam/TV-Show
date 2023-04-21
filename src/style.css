@@ -233,7 +233,7 @@ button {
   object-fit: contain;
 }
 
-.meal-detail {
+.movie-detail {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -242,7 +242,7 @@ button {
   gap: 5%;
 }
 
-.ingredient-list {
+.movie-info {
   display: flex;
   flex-direction: column;
   list-style: none;
