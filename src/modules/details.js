@@ -25,7 +25,7 @@ close
   <h2>${movieData.name}</h2>
   <ul class="movie-info">
     <li>
-    <ul class='genres'>
+    <ul class='genres flex-align-center'>
     ${movieData.genres.map((genre) => `<li>${genre}</li>`).join('\n')
 }
     </ul>

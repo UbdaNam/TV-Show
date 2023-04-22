@@ -41,9 +41,11 @@ const fetchdata = async () => {
     commentBtn.classList.add('comment-btn');
     likeBtn.innerHTML = '<span class="material-symbols-outlined">favorite</span>';
     likeBtn.classList.add('like-btn');
+    likeBtn.classList.add('flex-align-center');
     likeCount.textContent = likeCounter;
     likeCount.classList.add('likescounter');
     buttonContainer.classList.add('button-container');
+    buttonContainer.classList.add('flex-align-center');
     buttonContainer.appendChild(commentBtn);
     buttonContainer.appendChild(likeBtn);
     buttonContainer.appendChild(likeCount);
