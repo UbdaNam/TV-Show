@@ -27,9 +27,6 @@ h3 {
 header {
   position: fixed;
   top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 5px;
   box-shadow: 2px 0 2.5px;
   width: 100%;
@@ -46,9 +43,6 @@ header nav ul {
 }
 
 header nav ul li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-left: 50px;
   cursor: pointer;
   padding: 2px 5px;
@@ -57,10 +51,18 @@ header nav ul li {
   transition: 0.3s ease-in-out;
 }
 
-.logo {
+.flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
   text-align: center;
   padding: 10px 10px;
   border-radius: 50%;
@@ -81,10 +83,7 @@ header nav ul li:hover {
 
 .main {
   width: 100%;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-top: 60px;
   padding-top: 10px;
 }
@@ -97,8 +96,6 @@ footer {
   margin: 0%;
   padding: 0;
   width: 100%;
-  display: flex;
-  align-items: center;
   color: rgba(255, 255, 255, 0.883);
   z-index: 2;
 }
@@ -146,8 +143,6 @@ button {
 }
 
 .button-container {
-  display: flex;
-  align-items: center;
   gap: 10px;
   margin-left: 5px;
   margin-bottom: 4px;
@@ -163,8 +158,6 @@ button {
 }
 
 .like-btn {
-  display: flex;
-  align-items: center;
   background-color: transparent;
   border: none;
   padding: 1%;
@@ -250,8 +243,6 @@ button {
 }
 
 .genres {
-  display: flex;
-  align-items: center;
   gap: 10px;
   list-style: none;
 }
