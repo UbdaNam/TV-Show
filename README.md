@@ -47,7 +47,7 @@ This is a TV show list web app that fetches real time data from the server to sh
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](#)
+- [Live Demo Link](https://ubdanam.github.io/TV-Show/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
