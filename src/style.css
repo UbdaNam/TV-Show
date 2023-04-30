@@ -30,9 +30,9 @@ header {
   padding: 5px;
   box-shadow: 2px 0 2.5px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.031);
+  background-color: rgba(19, 12, 10, 0.5);
   z-index: 2;
-  color: white;
+  color: #fff;
 }
 
 header nav ul {
@@ -235,6 +235,7 @@ button {
   background-color: #0a0a0ad7;
   z-index: 3;
   padding: 2%;
+  backdrop-filter: blur(5px);
 }
 
 .visible {
