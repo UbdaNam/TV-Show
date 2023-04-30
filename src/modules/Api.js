@@ -69,5 +69,47 @@ const fetchdata = async () => {
       detilContainer.classList.add('visible');
     });
   });
+
+  const homeLink = document.querySelector('.home');
+
+  homeLink.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    const targetElement = document.querySelector(this.getAttribute('href'));
+    const targetPosition = targetElement.offsetTop;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth',
+    });
+  });
+
+  const TVLink = document.querySelector('.TV-Shows');
+
+  TVLink.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    const targetElement = document.querySelector(this.getAttribute('href'));
+    const targetPosition = targetElement.offsetTop;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth',
+    });
+  });
+
+  const contact = document.querySelector('.contact');
+
+  contact.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    const targetElement = document.querySelector(this.getAttribute('href'));
+    const targetPosition = targetElement.offsetTop;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth',
+    });
+  });
 };
 export default fetchdata;
